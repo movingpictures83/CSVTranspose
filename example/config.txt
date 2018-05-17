@@ -1,0 +1,2 @@
+Prefix plugins/CSVTranspose/example/
+Plugin CSVTranspose inputfile abund.csv outputfile abund.transpose.csv
