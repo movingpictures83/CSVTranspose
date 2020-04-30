@@ -20,8 +20,11 @@ class CSVTransposePlugin:
       self.rows.remove(self.rows[0]) # Buffer entry
       self.n = len(self.rows)
       for i in range(0, self.n):
-         self.rows[i] = '\"' + self.rows[i].strip() + '\"'
-      
+         if (not self.rows[i].startswith('\"')):
+            self.rows[i] = '\"' + self.rows[i].strip() + '\"'
+         else:
+            self.rows[i] = self.rows[i].strip()      
+
       self.cols = []
       for line in lines:
          self.cols.append(line[0])
